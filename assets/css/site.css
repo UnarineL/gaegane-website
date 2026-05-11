@@ -294,21 +294,143 @@ p{font-size:1rem;line-height:1.78;color:var(--muted);margin:0 0 16px}
   padding-top:14px;
 }
 
-/* reduce section spacing globally */
-.section{
-  padding:clamp(56px, 7vw, 96px) 0;
+/* =========================================
+   CLEAN LAYOUT REFINEMENT PASS
+========================================= */
+
+/* GLOBAL SECTION SPACING */
+.section,
+.section.alt,
+.intro-paper,
+.page-hero{
+  padding-top:56px !important;
+  padding-bottom:56px !important;
 }
 
-.section.alt{
-  padding:clamp(56px, 7vw, 96px) 0;
+/* REMOVE MASSIVE EMPTY GAPS */
+.content-stack{
+  gap:42px !important;
 }
 
-/* reduce large page headings across pages */
-.page-hero h1,
-.page-title,
+.split{
+  gap:38px !important;
+  align-items:start;
+}
+
+/* PAGE HERO CLEANUP */
+.page-hero{
+  min-height:auto !important;
+}
+
+.page-hero h1{
+  font-size:clamp(2.2rem,4vw,4.4rem) !important;
+  line-height:1.02 !important;
+  letter-spacing:-0.045em !important;
+  max-width:920px !important;
+  margin-bottom:18px !important;
+}
+
+.page-hero .lead{
+  font-size:1.05rem !important;
+  line-height:1.65 !important;
+  max-width:760px !important;
+}
+
+/* HOME INTRO SECTION */
+.intro-paper{
+  padding-top:52px !important;
+  padding-bottom:52px !important;
+}
+
+.intro-content h2{
+  font-size:clamp(2.4rem,4.5vw,4.8rem) !important;
+  line-height:1 !important;
+  max-width:980px !important;
+  margin-bottom:18px !important;
+}
+
+.intro-content .lead{
+  font-size:1.02rem !important;
+  line-height:1.7 !important;
+  max-width:760px !important;
+}
+
+/* BUTTON SPACING */
+.intro-actions{
+  margin-top:22px !important;
+  margin-bottom:26px !important;
+}
+
+/* SMALL FEATURE ROW */
+.plain-list{
+  margin-top:18px !important;
+  gap:18px !important;
+}
+
+.plain-item{
+  padding-top:12px !important;
+  font-size:.96rem;
+}
+
+/* INNER PAGE HEADINGS */
 .section h2,
 .text-block h2{
-  font-size:clamp(2.7rem, 5vw, 5.4rem);
-  line-height:.98;
-  letter-spacing:-.045em;
+  font-size:clamp(2rem,3.8vw,3.8rem) !important;
+  line-height:1.04 !important;
+  margin-bottom:16px !important;
+}
+
+/* TEXT SPACING */
+p{
+  margin-bottom:12px !important;
+  line-height:1.72 !important;
+}
+
+/* SERVICE PAGE CLEANUP */
+.process-grid{
+  margin-top:24px !important;
+  gap:18px !important;
+}
+
+.process-step{
+  min-height:160px !important;
+  padding:22px !important;
+}
+
+/* PORTFOLIO SPACING */
+.gallery-carousel-section{
+  padding-top:26px !important;
+  padding-bottom:26px !important;
+}
+
+/* REMOVE HUGE EMPTY WHITE AREAS */
+.image-frame,
+.image-frame.tall{
+  min-height:420px !important;
+}
+
+/* MOBILE REFINEMENT */
+@media(max-width:640px){
+
+  .section,
+  .section.alt,
+  .intro-paper,
+  .page-hero{
+    padding-top:42px !important;
+    padding-bottom:42px !important;
+  }
+
+  .page-hero h1,
+  .intro-content h2{
+    font-size:clamp(2rem,9vw,3.1rem) !important;
+    line-height:1.02 !important;
+  }
+
+  .split{
+    gap:28px !important;
+  }
+
+  .content-stack{
+    gap:30px !important;
+  }
 }
