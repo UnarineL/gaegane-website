@@ -248,3 +248,67 @@ p{font-size:1rem;line-height:1.78;color:var(--muted);margin:0 0 16px}
   .page-hero{padding:52px 0 42px;}
   .process-step{min-height:auto;}
 }
+
+/* refined intro section */
+.intro-paper{
+  padding:clamp(56px, 7vw, 92px) 0;
+}
+
+.intro-grid{
+  display:block;
+}
+
+.intro-kicker{
+  display:none;
+}
+
+.intro-full{
+  width:100%;
+  max-width:1180px;
+}
+
+.intro-content h2{
+  font-size:clamp(2.9rem, 5.4vw, 5.8rem);
+  line-height:.96;
+  letter-spacing:-.055em;
+  max-width:1120px;
+  margin:14px 0 24px;
+}
+
+.intro-content .lead{
+  max-width:860px;
+  font-size:clamp(1rem, 1.25vw, 1.22rem);
+  line-height:1.72;
+}
+
+.intro-actions{
+  margin-top:28px;
+  margin-bottom:36px;
+}
+
+.plain-list{
+  gap:24px;
+}
+
+.plain-item{
+  padding-top:14px;
+}
+
+/* reduce section spacing globally */
+.section{
+  padding:clamp(56px, 7vw, 96px) 0;
+}
+
+.section.alt{
+  padding:clamp(56px, 7vw, 96px) 0;
+}
+
+/* reduce large page headings across pages */
+.page-hero h1,
+.page-title,
+.section h2,
+.text-block h2{
+  font-size:clamp(2.7rem, 5vw, 5.4rem);
+  line-height:.98;
+  letter-spacing:-.045em;
+}
