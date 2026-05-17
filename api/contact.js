@@ -27,7 +27,7 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         from: "Gaegane Website <onboarding@resend.dev>",
-        to: ["info@gaegane.co.za"],
+        to: ["unarineluvhimbi8@gmail.com"],
         reply_to: email,
         subject: "New Project Enquiry - Gaegane Group",
         html: `
