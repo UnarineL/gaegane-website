@@ -1122,3 +1122,27 @@ p{
     align-items:flex-start;
   }
 }
+
+
+.form-message{
+  margin:4px 0 0;
+  font-weight:700;
+  font-size:.95rem;
+}
+
+.form-message.sending{
+  color:var(--muted);
+}
+
+.form-message.success{
+  color:#1f7a3a;
+}
+
+.form-message.error{
+  color:var(--maroon);
+}
+
+.form button:disabled{
+  opacity:.7;
+  cursor:not-allowed;
+}
