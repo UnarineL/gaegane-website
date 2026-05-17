@@ -217,12 +217,8 @@ form.addEventListener("submit", async function(e){
     if(result.success){
 
       message.textContent =
-        "Thank you. Your enquiry has been sent successfully.";
-
-      message.className = "form-message success";
-
       form.reset();
-
+      window.location.href = "thank-you.html";
     } else {
 
       message.textContent =
