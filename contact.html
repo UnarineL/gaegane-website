@@ -47,18 +47,21 @@
 
 <section class="section contact-refined">
   <div class="container contact-grid">
-    <form class="form reveal" action="https://formsubmit.co/unarineluvhimbi8@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="New Project Enquiry - Gaegane Group">
-         <input type="hidden" name="_captcha" value="false">
-         <input type="hidden" name="_template" value="table">
-  
-          <input type="text" name="First Name" placeholder="First Name" required>
-          <input type="text" name="Last Name" placeholder="Last Name" required>
-          <input type="email" name="Email" placeholder="Email Address" required>
-           <input type="tel" name="Phone Number" placeholder="Phone Number">
-          <textarea name="Project Information" placeholder="Tell us about your project" required></textarea>
 
-          <button class="btn btn-primary" type="submit">Submit Enquiry</button>
+    <form class="form reveal" id="contactForm">
+      <input type="hidden" name="_subject" value="New Project Enquiry - Gaegane Group">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+
+      <input type="text" name="First Name" placeholder="First Name" required>
+      <input type="text" name="Last Name" placeholder="Last Name" required>
+      <input type="email" name="Email" placeholder="Email Address" required>
+      <input type="tel" name="Phone Number" placeholder="Phone Number">
+      <textarea name="Project Information" placeholder="Tell us about your project" required></textarea>
+
+      <button class="btn btn-primary" type="submit">Submit Enquiry</button>
+
+      <p id="formMessage" class="form-message"></p>
     </form>
 
     <div class="contact-card contact-light-card reveal">
@@ -69,6 +72,7 @@
       <p><strong>Telephone:</strong> <a href="tel:+27104936109">010 493 6109</a></p>
       <p><strong>Email:</strong> <a href="mailto:info@gaegane.co.za">info@gaegane.co.za</a></p>
     </div>
+
   </div>
 </section>
 
@@ -101,5 +105,48 @@
 </footer>
 
 <script src="assets/js/site.js"></script>
+
+<script>
+const form = document.getElementById("contactForm");
+const message = document.getElementById("formMessage");
+const submitButton = form.querySelector("button[type='submit']");
+
+form.addEventListener("submit", async function(event){
+  event.preventDefault();
+
+  message.textContent = "Sending enquiry...";
+  message.className = "form-message sending";
+  submitButton.disabled = true;
+  submitButton.textContent = "Sending...";
+
+  const formData = new FormData(form);
+
+  try {
+    const response = await fetch("https://formsubmit.co/ajax/unarineluvhimbi8@gmail.com", {
+      method: "POST",
+      body: formData,
+      headers: {
+        "Accept": "application/json"
+      }
+    });
+
+    if (response.ok) {
+      message.textContent = "Thank you. Your enquiry has been sent successfully.";
+      message.className = "form-message success";
+      form.reset();
+    } else {
+      message.textContent = "Something went wrong. Please try again.";
+      message.className = "form-message error";
+    }
+  } catch (error) {
+    message.textContent = "Could not send enquiry. Please check your connection and try again.";
+    message.className = "form-message error";
+  }
+
+  submitButton.disabled = false;
+  submitButton.textContent = "Submit Enquiry";
+});
+</script>
+
 </body>
 </html>
