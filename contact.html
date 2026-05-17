@@ -47,13 +47,18 @@
 
 <section class="section contact-refined">
   <div class="container contact-grid">
-    <form class="form reveal" action="mailto:info@gaegane.co.za" method="post" enctype="text/plain">
-      <input type="text" name="First Name" placeholder="First Name" required>
-      <input type="text" name="Last Name" placeholder="Last Name" required>
-      <input type="email" name="Email" placeholder="Email" required>
-      <input type="tel" name="Phone Number" placeholder="Phone Number">
-      <textarea name="Project Information" placeholder="Information on your project"></textarea>
-      <button class="btn btn-primary" type="submit">Submit</button>
+    <form class="form reveal" action="https://formsubmit.co/info@gaegane.co.za" method="POST">
+        <input type="hidden" name="_subject" value="New Project Enquiry - Gaegane Group">
+         <input type="hidden" name="_captcha" value="false">
+         <input type="hidden" name="_template" value="table">
+
+          <input type="text" name="First Name" placeholder="First Name" required>
+          <input type="text" name="Last Name" placeholder="Last Name" required>
+          <input type="email" name="Email" placeholder="Email Address" required>
+           <input type="tel" name="Phone Number" placeholder="Phone Number">
+          <textarea name="Project Information" placeholder="Tell us about your project" required></textarea>
+
+          <button class="btn btn-primary" type="submit">Submit Enquiry</button>
     </form>
 
     <div class="contact-card contact-light-card reveal">
