@@ -1522,3 +1522,34 @@ p{
     display:none;
   }
 }
+.project-image-track{
+  display:grid;
+  grid-auto-flow:column;
+  grid-auto-columns:calc((100% - 32px)/3);
+  gap:16px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  padding:8px 0 18px;
+  scrollbar-width:none;
+}
+
+.project-image-track::-webkit-scrollbar{display:none}
+
+.project-image-track img{
+  height:clamp(300px,30vw,440px);
+  width:100%;
+  object-fit:cover;
+  border-radius:22px;
+  box-shadow:var(--soft);
+  scroll-snap-align:start;
+}
+
+.portfolio-select-card.upcoming img,
+.nyala-coming-soon img{
+  filter:blur(10px) brightness(.35);
+}
+
+@media(max-width:900px){
+  .project-image-track{grid-auto-columns:86%}
+}
