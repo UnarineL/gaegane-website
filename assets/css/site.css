@@ -1379,3 +1379,46 @@ p{
     min-height:320px;
   }
 }
+
+.project-detail-panel{
+  display:none;
+}
+
+.project-detail-panel.active{
+  display:block;
+}
+
+.project-open-btn,
+.project-close-btn{
+  border:1px solid rgba(255,255,255,.45);
+  background:rgba(255,255,255,.12);
+  color:#fff;
+  border-radius:999px;
+  padding:12px 16px;
+  font-weight:800;
+  cursor:pointer;
+  margin-top:14px;
+  transition:.25s ease;
+}
+
+.project-open-btn:hover{
+  background:#fff;
+  color:var(--black);
+}
+
+.project-close-btn{
+  color:var(--black);
+  background:#fff;
+  border-color:var(--line);
+  margin-bottom:28px;
+}
+
+.project-close-btn:hover{
+  background:var(--maroon);
+  color:#fff;
+  border-color:var(--maroon);
+}
+
+.portfolio-select-card.upcoming img{
+  filter:blur(7px) brightness(.45);
+}
