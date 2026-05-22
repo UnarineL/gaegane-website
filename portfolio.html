@@ -48,7 +48,7 @@
   <div class="container">
     <div class="portfolio-select-grid">
 
-      <article class="portfolio-select-card reveal active-card" data-project="heritage">
+      <article class="portfolio-select-card reveal" data-project="heritage">
         <img src="assets/images/heritage-living-area.jpg" alt="Heritage Cottage">
         <div class="portfolio-card-copy">
           <span>Renovation / Interior Design</span>
@@ -78,13 +78,14 @@
     </div>
   </div>
 </section>
+
 <section class="project-modal" id="projectModal" aria-hidden="true">
   <div class="project-modal-backdrop"></div>
 
   <div class="project-modal-box">
     <button class="project-modal-close" type="button" aria-label="Close project details">×</button>
 
-    <article class="project-tab active" id="tab-heritage">
+    <article class="project-tab" id="tab-heritage">
       <div class="project-tab-copy">
         <span class="eyebrow">Heritage Cottage</span>
         <h2>Architectural redesign, interior design and construction of an existing heritage cottage.</h2>
@@ -93,16 +94,16 @@
       </div>
 
       <div class="project-scroll-wrap">
-        <button class="project-scroll-btn project-scroll-left" type="button">&#10094;</button>
+        <button class="project-scroll-btn project-scroll-left" type="button" aria-label="Scroll left">&#10094;</button>
         <div class="project-image-track">
-          <img src="assets/images/heritage-covered-patio.jpg" alt="">
-          <img src="assets/images/heritage-kitchen.jpg" alt="">
-          <img src="assets/images/heritage-living-area.jpg" alt="">
-          <img src="assets/images/heritage-lounge.jpg" alt="">
-          <img src="assets/images/heritage-primary-bedroom.jpg" alt="">
-          <img src="assets/images/heritage-primary-bathroom.jpg" alt="">
+          <img src="assets/images/heritage-covered-patio.jpg" alt="Heritage Cottage covered patio">
+          <img src="assets/images/heritage-kitchen.jpg" alt="Heritage Cottage kitchen">
+          <img src="assets/images/heritage-living-area.jpg" alt="Heritage Cottage living area">
+          <img src="assets/images/heritage-lounge.jpg" alt="Heritage Cottage lounge">
+          <img src="assets/images/heritage-primary-bedroom.jpg" alt="Heritage Cottage primary bedroom">
+          <img src="assets/images/heritage-primary-bathroom.jpg" alt="Heritage Cottage primary bathroom">
         </div>
-        <button class="project-scroll-btn project-scroll-right" type="button">&#10095;</button>
+        <button class="project-scroll-btn project-scroll-right" type="button" aria-label="Scroll right">&#10095;</button>
       </div>
     </article>
 
@@ -115,17 +116,17 @@
       </div>
 
       <div class="project-scroll-wrap">
-        <button class="project-scroll-btn project-scroll-left" type="button">&#10094;</button>
+        <button class="project-scroll-btn project-scroll-left" type="button" aria-label="Scroll left">&#10094;</button>
         <div class="project-image-track">
-          <img src="assets/images/farmhouse-open-plan-living.jpg" alt="">
-          <img src="assets/images/farmhouse-dining-lounge.jpg" alt="">
-          <img src="assets/images/farmhouse-lounge.jpg" alt="">
-          <img src="assets/images/farmhouse-kitchen.jpg" alt="">
-          <img src="assets/images/farmhouse-chefs-kitchen.jpg" alt="">
-          <img src="assets/images/farmhouse-braai-area.jpg" alt="">
-          <img src="assets/images/farmhouse-entertainment-area.jpg" alt="">
+          <img src="assets/images/farmhouse-open-plan-living.jpg" alt="Farmhouse open plan living">
+          <img src="assets/images/farmhouse-dining-lounge.jpg" alt="Farmhouse dining and lounge">
+          <img src="assets/images/farmhouse-lounge.jpg" alt="Farmhouse lounge">
+          <img src="assets/images/farmhouse-kitchen.jpg" alt="Farmhouse kitchen">
+          <img src="assets/images/farmhouse-chefs-kitchen.jpg" alt="Farmhouse chef kitchen">
+          <img src="assets/images/farmhouse-braai-area.jpg" alt="Farmhouse braai area">
+          <img src="assets/images/farmhouse-entertainment-area.jpg" alt="Farmhouse entertainment area">
         </div>
-        <button class="project-scroll-btn project-scroll-right" type="button">&#10095;</button>
+        <button class="project-scroll-btn project-scroll-right" type="button" aria-label="Scroll right">&#10095;</button>
       </div>
     </article>
 
@@ -137,7 +138,7 @@
       </div>
 
       <div class="nyala-coming-soon">
-        <img src="assets/images/diedericks-near.jpg" alt="">
+        <img src="assets/images/diedericks-near.jpg" alt="Nyala Avenue upcoming project">
         <div>
           <span class="eyebrow">Updates Coming Soon</span>
           <h3>Project information will be added soon.</h3>
@@ -160,6 +161,8 @@
     </div>
   </div>
 </footer>
+
+<script src="assets/js/site.js"></script>
 
 <script>
 const cards = document.querySelectorAll(".portfolio-select-card");
@@ -196,7 +199,7 @@ cards.forEach(card => {
 modalClose.addEventListener("click", closeModal);
 modalBackdrop.addEventListener("click", closeModal);
 
-document.addEventListener("keydown", (event) => {
+document.addEventListener("keydown", event => {
   if(event.key === "Escape"){
     closeModal();
   }
