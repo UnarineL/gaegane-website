@@ -1204,15 +1204,8 @@ p{
   order:1;
 }
 
-.service-copy h2{
-  max-width:760px;
-}
-
-.service-copy p{
-  max-width:720px;
-}
-
 .service-image{
+  position:relative;
   min-height:420px;
   border-radius:var(--radius);
   overflow:hidden;
@@ -1221,6 +1214,8 @@ p{
 }
 
 .service-image img{
+  position:absolute;
+  inset:0;
   width:100%;
   height:100%;
   object-fit:cover;
