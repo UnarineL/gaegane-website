@@ -48,7 +48,7 @@
   <div class="container">
     <div class="portfolio-select-grid">
 
-      <article class="portfolio-select-card reveal" data-project="heritage">
+      <article class="portfolio-select-card reveal active-card" data-project="heritage">
         <img src="assets/images/heritage-living-area.jpg" alt="Heritage Cottage">
         <div class="portfolio-card-copy">
           <span>Renovation / Interior Design</span>
@@ -79,13 +79,11 @@
   </div>
 </section>
 
-<section class="project-details-wrap">
+<section class="project-tab-section">
+  <div class="container">
 
-  <article class="section project-detail-panel" id="project-heritage">
-    <div class="container">
-      <button class="project-close-btn" type="button">Close details</button>
-
-      <div class="project-detail-head reveal">
+    <article class="project-tab active" id="tab-heritage">
+      <div class="project-tab-copy">
         <span class="eyebrow">Heritage Cottage</span>
         <h2>Architectural redesign, interior design and construction of an existing heritage cottage.</h2>
         <p>
@@ -96,22 +94,24 @@
         </p>
       </div>
 
-      <div class="project-gallery-grid">
-        <div class="image-frame reveal"><img src="assets/images/heritage-covered-patio.jpg" alt="Heritage Cottage covered patio"></div>
-        <div class="image-frame reveal"><img src="assets/images/heritage-kitchen.jpg" alt="Heritage Cottage kitchen"></div>
-        <div class="image-frame reveal"><img src="assets/images/heritage-living-area.jpg" alt="Heritage Cottage living area"></div>
-        <div class="image-frame reveal"><img src="assets/images/heritage-lounge.jpg" alt="Heritage Cottage lounge"></div>
-        <div class="image-frame reveal"><img src="assets/images/heritage-primary-bedroom.jpg" alt="Heritage Cottage primary bedroom"></div>
-        <div class="image-frame reveal"><img src="assets/images/heritage-primary-bathroom.jpg" alt="Heritage Cottage primary bathroom"></div>
+      <div class="project-scroll-wrap">
+        <button class="project-scroll-btn project-scroll-left" type="button" aria-label="Scroll left">&#10094;</button>
+
+        <div class="project-image-track">
+          <img src="assets/images/heritage-covered-patio.jpg" alt="Heritage Cottage covered patio">
+          <img src="assets/images/heritage-kitchen.jpg" alt="Heritage Cottage kitchen">
+          <img src="assets/images/heritage-living-area.jpg" alt="Heritage Cottage living area">
+          <img src="assets/images/heritage-lounge.jpg" alt="Heritage Cottage lounge">
+          <img src="assets/images/heritage-primary-bedroom.jpg" alt="Heritage Cottage primary bedroom">
+          <img src="assets/images/heritage-primary-bathroom.jpg" alt="Heritage Cottage primary bathroom">
+        </div>
+
+        <button class="project-scroll-btn project-scroll-right" type="button" aria-label="Scroll right">&#10095;</button>
       </div>
-    </div>
-  </article>
+    </article>
 
-  <article class="section alt project-detail-panel" id="project-farmhouse">
-    <div class="container">
-      <button class="project-close-btn" type="button">Close details</button>
-
-      <div class="project-detail-head reveal">
+    <article class="project-tab" id="tab-farmhouse">
+      <div class="project-tab-copy">
         <span class="eyebrow">Northwest Farmhouse</span>
         <h2>A refined modern farmhouse aesthetic shaped around landscape, function and timeless design.</h2>
         <p>
@@ -122,22 +122,25 @@
         </p>
       </div>
 
-      <div class="project-gallery-grid">
-        <div class="image-frame reveal"><img src="assets/images/farmhouse-open-plan-living.jpg" alt="Farmhouse open plan living"></div>
-        <div class="image-frame reveal"><img src="assets/images/farmhouse-dining-lounge.jpg" alt="Farmhouse dining and lounge"></div>
-        <div class="image-frame reveal"><img src="assets/images/farmhouse-lounge.jpg" alt="Farmhouse lounge"></div>
-        <div class="image-frame reveal"><img src="assets/images/farmhouse-kitchen.jpg" alt="Farmhouse kitchen"></div>
-        <div class="image-frame reveal"><img src="assets/images/farmhouse-chefs-kitchen.jpg" alt="Farmhouse chef kitchen"></div>
-        <div class="image-frame reveal"><img src="assets/images/farmhouse-braai-area.jpg" alt="Farmhouse braai area"></div>
+      <div class="project-scroll-wrap">
+        <button class="project-scroll-btn project-scroll-left" type="button" aria-label="Scroll left">&#10094;</button>
+
+        <div class="project-image-track">
+          <img src="assets/images/farmhouse-open-plan-living.jpg" alt="Farmhouse open plan living">
+          <img src="assets/images/farmhouse-dining-lounge.jpg" alt="Farmhouse dining and lounge">
+          <img src="assets/images/farmhouse-lounge.jpg" alt="Farmhouse lounge">
+          <img src="assets/images/farmhouse-kitchen.jpg" alt="Farmhouse kitchen">
+          <img src="assets/images/farmhouse-chefs-kitchen.jpg" alt="Farmhouse chef kitchen">
+          <img src="assets/images/farmhouse-braai-area.jpg" alt="Farmhouse braai area">
+          <img src="assets/images/farmhouse-entertainment-area.jpg" alt="Farmhouse entertainment area">
+        </div>
+
+        <button class="project-scroll-btn project-scroll-right" type="button" aria-label="Scroll right">&#10095;</button>
       </div>
-    </div>
-  </article>
+    </article>
 
-  <article class="section project-detail-panel" id="project-nyala">
-    <div class="container">
-      <button class="project-close-btn" type="button">Close details</button>
-
-      <div class="project-detail-head reveal">
+    <article class="project-tab" id="tab-nyala">
+      <div class="project-tab-copy">
         <span class="eyebrow">Nyala Avenue</span>
         <h2>Upcoming project.</h2>
         <p>
@@ -145,16 +148,16 @@
         </p>
       </div>
 
-      <div class="nyala-coming-soon reveal">
+      <div class="nyala-coming-soon">
         <img src="assets/images/diedericks-near.jpg" alt="Nyala Avenue upcoming project">
         <div>
           <span class="eyebrow">Updates Coming Soon</span>
           <h3>Project information will be added soon.</h3>
         </div>
       </div>
-    </div>
-  </article>
+    </article>
 
+  </div>
 </section>
 
 </main>
@@ -174,45 +177,40 @@
 <script src="assets/js/site.js"></script>
 
 <script>
-const projectCards = document.querySelectorAll(".portfolio-select-card");
-const detailPanels = document.querySelectorAll(".project-detail-panel");
-const closeButtons = document.querySelectorAll(".project-close-btn");
+const cards = document.querySelectorAll(".portfolio-select-card");
+const tabs = document.querySelectorAll(".project-tab");
 
-function openProject(projectName){
-  detailPanels.forEach(panel => {
-    panel.classList.remove("active");
-  });
+cards.forEach(card => {
+  card.addEventListener("click", () => {
+    const project = card.dataset.project;
 
-  const selectedPanel = document.getElementById("project-" + projectName);
+    cards.forEach(item => item.classList.remove("active-card"));
+    card.classList.add("active-card");
 
-  if(selectedPanel){
-    selectedPanel.classList.add("active");
+    tabs.forEach(tab => tab.classList.remove("active"));
 
-    setTimeout(() => {
-      selectedPanel.scrollIntoView({
+    const selectedTab = document.getElementById("tab-" + project);
+    if(selectedTab){
+      selectedTab.classList.add("active");
+      document.querySelector(".project-tab-section").scrollIntoView({
         behavior: "smooth",
         block: "start"
       });
-    }, 80);
-  }
-}
-
-projectCards.forEach(card => {
-  card.addEventListener("click", () => {
-    openProject(card.dataset.project);
+    }
   });
 });
 
-closeButtons.forEach(button => {
-  button.addEventListener("click", () => {
-    detailPanels.forEach(panel => {
-      panel.classList.remove("active");
-    });
+document.querySelectorAll(".project-scroll-wrap").forEach(wrap => {
+  const track = wrap.querySelector(".project-image-track");
+  const left = wrap.querySelector(".project-scroll-left");
+  const right = wrap.querySelector(".project-scroll-right");
 
-    document.querySelector(".portfolio-select-section").scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
+  left.addEventListener("click", () => {
+    track.scrollBy({ left: -420, behavior: "smooth" });
+  });
+
+  right.addEventListener("click", () => {
+    track.scrollBy({ left: 420, behavior: "smooth" });
   });
 });
 </script>
