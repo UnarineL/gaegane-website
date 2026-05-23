@@ -98,10 +98,11 @@ img{
   color:var(--black);
   transform:none;
 }
+
 .nav-links a.active{
-  background:var(--maroon);
-  color:#fff;
-  transform:translateY(-1px);
+  background:transparent;
+  color:var(--maroon);
+  transform:none;
 }
 
 .menu-toggle{
