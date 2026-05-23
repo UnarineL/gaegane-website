@@ -95,13 +95,11 @@ img{
 
 .nav-links a:hover{
   background:transparent;
-  color:var(--maroon);
   transform:none;
 }
 
 .nav-links a.active{
-  background:transparent;
-  color:var(--maroon);
+  background:color:var(--maroon);
   transform:none;
 }
 
