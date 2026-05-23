@@ -553,7 +553,8 @@ p{
 /* PORTFOLIO */
 
 .portfolio-select-section{
-  padding-top:36px;
+  padding:36px 0 42px;
+  background:var(--paper);
 }
 
 .portfolio-select-grid{
@@ -564,11 +565,10 @@ p{
 
 .portfolio-select-card{
   position:relative;
-  min-height:320px;
+  min-height:300px;
   overflow:hidden;
   background:#111;
   box-shadow:var(--soft);
-  border-radius:0 !important;
 }
 
 .portfolio-select-card img{
@@ -578,18 +578,17 @@ p{
   height:100%;
   object-fit:cover;
   transition:.6s ease;
-  border-radius:0 !important;
 }
 
 .portfolio-select-card:hover img{
-  transform:scale(1.05);
+  transform:scale(1.04);
 }
 
 .portfolio-select-card::after{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.75));
+  background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.68));
 }
 
 .portfolio-select-card.upcoming img{
@@ -600,36 +599,17 @@ p{
 .portfolio-card-copy{
   position:absolute;
   z-index:2;
-  left:28px;
-  right:28px;
-  bottom:28px;
+  left:22px;
+  right:22px;
+  bottom:22px;
   color:#fff;
-}
-
-.portfolio-card-copy span{
-  display:block;
-  font-size:.72rem;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  color:var(--gold);
-  font-weight:800;
-  margin-bottom:10px;
 }
 
 .portfolio-card-copy h2{
   color:#fff;
-  margin-bottom:18px;
-}
-
-.portfolio-card-copy p,
-.project-open-btn{
-  color:#fff;
-}
-
-.project-open-btn{
-  background:var(--maroon);
-  padding:14px 18px;
-  min-height:auto;
+  font-size:clamp(1.45rem,2vw,2.3rem);
+  line-height:1.05;
+  margin:0;
 }
 
 .project-open-btn:hover{
@@ -1039,37 +1019,41 @@ p{
 
 .construction-showcase{
   overflow:hidden;
-  background:#fff;
-  padding:32px 0 54px;
+  background:var(--paper);
+  padding:0 0 54px;
+}
+
+.construction-showcase-head{
+  margin-bottom:22px;
+}
+
+.construction-showcase-head h2{
+  font-size:clamp(1.7rem,3vw,3rem);
+  margin:0;
 }
 
 .construction-track{
   display:flex;
   gap:18px;
   width:max-content;
-  animation:constructionSlide 46s linear infinite;
+  animation:constructionSlide 48s linear infinite;
 }
 
 .construction-track img{
-  width:360px;
-  height:260px;
+  width:280px;
+  height:190px;
   object-fit:cover;
   flex:0 0 auto;
-  border-radius:0 !important;
 }
 
 @keyframes constructionSlide{
-  from{
-    transform:translateX(0);
-  }
-  to{
-    transform:translateX(-50%);
-  }
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
 }
 
 @media(max-width:640px){
   .construction-track img{
-    width:270px;
-    height:210px;
+    width:230px;
+    height:170px;
   }
 }
