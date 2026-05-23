@@ -1162,3 +1162,22 @@ p{
   max-width:none;
   padding:0 20px;
 }
+
+.about-content-wrap{
+  max-width:1180px;
+}
+
+.about-inline-image{
+  width:100%;
+  margin-bottom:42px;
+  box-shadow:var(--soft);
+  overflow:hidden;
+}
+
+.about-inline-image img{
+  width:100%;
+  height:380px;
+  object-fit:contain;
+  object-position:center;
+  display:block;
+}
