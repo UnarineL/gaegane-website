@@ -1151,6 +1151,8 @@ p{
 }
 
 .about-team-top img{
-  max-height:420px;
-  object-fit:cover;
+  width:100%;
+  height:auto;
+  max-height:none;
+  object-fit:contain;
 }
