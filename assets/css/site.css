@@ -1138,3 +1138,19 @@ p{
     font-size:1rem;
   }
 }
+
+.about-story-title{
+  color:var(--black);
+  font-size:clamp(1.4rem,2vw,2rem);
+  font-weight:600;
+  margin-top:18px;
+}
+
+.about-team-top{
+  padding:42px 0 18px;
+}
+
+.about-team-top img{
+  max-height:420px;
+  object-fit:cover;
+}
