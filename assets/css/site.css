@@ -100,9 +100,9 @@ img{
 }
 
 .nav-links a.active{
-  background:transparent;
-  color:var(--maroon);
-  transform:none;
+   background:var(--maroon);
+  color:#fff;
+  transform:translateY(-1px);
 }
 
 .menu-toggle{
