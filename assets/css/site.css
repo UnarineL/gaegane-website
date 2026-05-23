@@ -1036,3 +1036,40 @@ p{
     transform:translateY(0);
   }
 }
+
+.construction-showcase{
+  overflow:hidden;
+  background:#fff;
+  padding:32px 0 54px;
+}
+
+.construction-track{
+  display:flex;
+  gap:18px;
+  width:max-content;
+  animation:constructionSlide 46s linear infinite;
+}
+
+.construction-track img{
+  width:360px;
+  height:260px;
+  object-fit:cover;
+  flex:0 0 auto;
+  border-radius:0 !important;
+}
+
+@keyframes constructionSlide{
+  from{
+    transform:translateX(0);
+  }
+  to{
+    transform:translateX(-50%);
+  }
+}
+
+@media(max-width:640px){
+  .construction-track img{
+    width:270px;
+    height:210px;
+  }
+}
