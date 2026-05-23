@@ -1147,9 +1147,8 @@ p{
 }
 
 .about-team-top{
-  padding:20px 0;
+  padding:0;
 }
-
 
 .about-team-top img{
   width:100%;
@@ -1169,8 +1168,7 @@ p{
 
 .about-inline-image{
   width:100%;
-  margin-bottom:42px;
-  box-shadow:var(--soft);
+  margin-bottom:24px;
   overflow:hidden;
 }
 
@@ -1180,4 +1178,5 @@ p{
   object-fit:cover;
   transform:scaleY(0.88);
   transform-origin:center;
+  display:block;
 }
