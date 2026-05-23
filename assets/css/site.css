@@ -1146,12 +1146,12 @@ p{
   margin-top:18px;
 }
 
-.about-team-top .container{
-  width:min(95%, 1600px);
+.about-team-top{
+  padding:20px 0;
 }
 
 .about-team-top img{
   width:100%;
-  height:auto;
-  display:block;
-}
+  max-height:500px;
+  object-fit:contain;
+}}
