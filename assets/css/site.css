@@ -1152,5 +1152,7 @@ p{
 
 .about-team-top img{
   width:100%;
-  height:auto;
+  height:400px;
+  object-fit:contain;
+  object-position:center;
 }
