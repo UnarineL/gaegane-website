@@ -1153,6 +1153,4 @@ p{
 .about-team-top img{
   width:100%;
   height:auto;
-  max-height:none;
-  object-fit:contain;
 }
