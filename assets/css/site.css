@@ -553,8 +553,8 @@ p{
 /* PORTFOLIO */
 
 .portfolio-select-section{
-  padding:36px 0 42px;
-  background:var(--paper);
+   padding-top:36px;
+  background:transparent;
 }
 
 .portfolio-select-grid{
@@ -1019,7 +1019,7 @@ p{
 
 .construction-showcase{
   overflow:hidden;
-  background:var(--paper);
+  background:transparent;
   padding:100px 0 54px;
 }
 
