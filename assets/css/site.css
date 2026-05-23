@@ -93,11 +93,16 @@ img{
   transition:.25s ease;
 }
 
-.nav-links a:hover,
+.nav-links a:hover{
+  background:transparent;
+  color:var(--maroon);
+  transform:none;
+}
+
 .nav-links a.active{
-  background:var(--maroon);
-  color:#fff;
-  transform:translateY(-1px);
+  background:transparent;
+  color:var(--maroon);
+  transform:none;
 }
 
 .menu-toggle{
