@@ -607,13 +607,11 @@ p{
 
 .portfolio-card-copy h2{
   color:#fff;
-  font-size:clamp(1rem,1.2vw,1.5rem);
+  font-size:1.15rem;
   font-weight:600;
   line-height:1.2;
   margin:0;
-  letter-spacing:-0.02em;
 }
-
 .project-open-btn:hover{
   background:#5e0d0f;
 }
