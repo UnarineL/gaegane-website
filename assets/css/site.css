@@ -1152,7 +1152,13 @@ p{
 
 
 .about-team-top img{
-  width:130%;
+  width:100%;
   max-height:500px;
   object-fit:contain;
+}
+
+.about-team-top .container{
+  width:100%;
+  max-width:none;
+  padding:0 20px;
 }
