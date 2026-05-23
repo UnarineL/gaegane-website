@@ -564,7 +564,7 @@ p{
 
 .portfolio-select-card{
   position:relative;
-  min-height:520px;
+  min-height:320px;
   overflow:hidden;
   background:#111;
   box-shadow:var(--soft);
