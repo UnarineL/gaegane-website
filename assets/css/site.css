@@ -1180,3 +1180,68 @@ p{
   transform-origin:center;
   display:block;
 }
+
+
+.services-icon-section{
+  padding-top:36px;
+}
+
+.services-icon-stack{
+  display:grid;
+  gap:0;
+}
+
+.service-icon-row{
+  display:grid;
+  grid-template-columns:160px 1fr;
+  gap:48px;
+  padding:46px 0;
+  border-bottom:1px solid var(--line);
+  align-items:start;
+}
+
+.service-icon-row:first-child{
+  padding-top:10px;
+}
+
+.service-icon-row:last-child{
+  border-bottom:0;
+}
+
+.service-icon{
+  width:96px;
+  height:96px;
+  display:grid;
+  place-items:center;
+  color:var(--maroon);
+}
+
+.service-icon i{
+  font-size:4.2rem;
+}
+
+.service-icon-row .service-copy h2{
+  font-size:clamp(1.8rem,3vw,3.2rem);
+  max-width:880px;
+}
+
+.service-icon-row .service-copy p{
+  max-width:900px;
+}
+
+@media(max-width:760px){
+  .service-icon-row{
+    grid-template-columns:1fr;
+    gap:22px;
+    padding:38px 0;
+  }
+
+  .service-icon{
+    width:76px;
+    height:76px;
+  }
+
+  .service-icon i{
+    font-size:3.2rem;
+  }
+}
