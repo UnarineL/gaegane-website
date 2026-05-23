@@ -15,80 +15,91 @@
 <body>
 
 <header class="site-header">
-<div class="container nav">
-<a class="brand" href="index.html">
-<img src="assets/images/horizont-bg.png" alt="Gaegane Group logo">
-</a>
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img src="assets/images/horizont-bg.png" alt="Gaegane Group logo">
+    </a>
 
-<button class="menu-toggle" type="button">
-<span></span><span></span><span></span>
-</button>
+    <button class="menu-toggle" type="button" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
 
-<nav class="nav-links">
-<a href="index.html">Home</a>
-<a href="about.html">About Us</a>
-<a href="services.html">Services</a>
-<a href="portfolio.html" class="active">Portfolio</a>
-<a href="contact.html">Contact Us</a>
-</nav>
-</div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </div>
 </header>
 
 <main>
 
-<section class="page-hero refined-page-hero">
-<div class="container reveal">
-<span class="eyebrow">Northwest Farmhouse</span>
-<h1>A refined modern farmhouse aesthetic shaped around landscape, function and timeless design.</h1>
-</div>
+<section class="page-hero refined-page-hero project-page-hero">
+  <div class="container reveal">
+    <span class="eyebrow">Northwest Farmhouse</span>
+    <h1>A refined modern farmhouse aesthetic shaped around landscape, function and timeless design.</h1>
+  </div>
 </section>
 
-<section class="section">
-<div class="container narrow-copy reveal">
+<section class="section project-copy-section">
+  <div class="container narrow-copy reveal">
+    <p>
+      The Northwest Farmhouse project involved the architectural and interior architectural enhancement of an existing farmhouse situated on a 6.8-hectare working farm. Drawing inspiration from the surrounding landscape and mining character of the region, the design embraces raw natural textures, durable materials and clean architectural lines to create a refined modern farmhouse aesthetic.
+    </p>
 
-<p>
-The Northwest Farmhouse project involved the architectural and interior architectural enhancement of an existing farmhouse situated on a 6.8-hectare working farm. Drawing inspiration from the surrounding landscape and mining character of the region, the design embraces raw natural textures, durable materials and clean architectural lines to create a refined modern farmhouse aesthetic.
-</p>
-
-<p>
-The existing structure was reconfigured into a functional three-bedroom open-plan residence tailored for contemporary farm living, while still supporting the operational needs of the working farm. The result is a cohesive architectural and interior environment that balances practicality, comfort and timeless design integrity.
-</p>
-
-</div>
+    <p>
+      The existing structure was reconfigured into a functional three-bedroom open-plan residence tailored for contemporary farm living, while still supporting the operational needs of the working farm. The result is a cohesive architectural and interior environment that balances practicality, comfort and timeless design integrity.
+    </p>
+  </div>
 </section>
 
-<section class="gallery-carousel-section refined-gallery">
-<div class="container">
+<section class="gallery-carousel-section refined-gallery project-gallery-section">
+  <div class="container project-gallery-wrap">
+    <button class="project-gallery-arrow left" type="button" aria-label="Previous images">&#10094;</button>
 
-<div class="project-image-track">
-<img src="assets/images/farmhouse-open-plan-living.jpg" alt="">
-<img src="assets/images/farmhouse-dining-lounge.jpg" alt="">
-<img src="assets/images/farmhouse-lounge.jpg" alt="">
-<img src="assets/images/farmhouse-kitchen.jpg" alt="">
-<img src="assets/images/farmhouse-chefs-kitchen.jpg" alt="">
-<img src="assets/images/farmhouse-braai-area.jpg" alt="">
-<img src="assets/images/farmhouse-entertainment-area.jpg" alt="">
-<img src="assets/images/farmhouse-main-bathroom.jpg" alt="">
-<img src="assets/images/farmhouse-linen-storage.jpg" alt="">
-</div>
+    <div class="project-image-track">
+      <img src="assets/images/farmhouse-braai-area.jpg" alt="Farmhouse braai area">
+      <img src="assets/images/farmhouse-chefs-kitchen.jpg" alt="Farmhouse chef kitchen">
+      <img src="assets/images/farmhouse-dining-lounge.jpg" alt="Farmhouse dining and lounge">
+      <img src="assets/images/farmhouse-entertainment-area.jpg" alt="Farmhouse entertainment area">
+      <img src="assets/images/farmhouse-kitchen.jpg" alt="Farmhouse kitchen">
+      <img src="assets/images/farmhouse-linen-storage.jpg" alt="Farmhouse linen storage">
+      <img src="assets/images/farmhouse-lounge.jpg" alt="Farmhouse lounge">
+      <img src="assets/images/farmhouse-main-bathroom.jpg" alt="Farmhouse main bathroom">
+      <img src="assets/images/farmhouse-open-plan-living.jpg" alt="Farmhouse open plan living">
+    </div>
 
-</div>
-</section>
-
-<section class="section project-back-section">
-<div class="container">
-<a class="btn btn-primary" href="portfolio.html">Back to Portfolio</a>
-</div>
+    <button class="project-gallery-arrow right" type="button" aria-label="Next images">&#10095;</button>
+  </div>
 </section>
 
 </main>
 
 <footer class="footer footer-brand">
-<div class="container footer-clean">
-<p>© 2026 Gaegane Group. All Rights Reserved.</p>
-</div>
+  <div class="container footer-clean">
+    <p>© 2026 Gaegane Group. All Rights Reserved.</p>
+  </div>
 </footer>
 
 <script src="assets/js/site.js"></script>
+
+<script>
+document.querySelectorAll(".project-gallery-wrap").forEach(wrap => {
+  const track = wrap.querySelector(".project-image-track");
+  const left = wrap.querySelector(".project-gallery-arrow.left");
+  const right = wrap.querySelector(".project-gallery-arrow.right");
+
+  left.addEventListener("click", () => {
+    track.scrollBy({ left: -420, behavior: "smooth" });
+  });
+
+  right.addEventListener("click", () => {
+    track.scrollBy({ left: 420, behavior: "smooth" });
+  });
+});
+</script>
+
 </body>
 </html>
