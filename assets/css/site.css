@@ -466,10 +466,9 @@ p{
 
 .about-story-title{
   color:var(--black);
-  font-size:clamp(1.8rem,2.8vw,2.8rem);
+  font-size:1.6rem;
   font-weight:600;
-  margin:0 0 24px;
-  letter-spacing:-.03em;
+  margin:0 0 22px;
 }
 
 .about-subsection{
