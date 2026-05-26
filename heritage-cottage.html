@@ -10,6 +10,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="assets/css/site.css">
+<style>
+.project-image-track img { cursor: zoom-in; }
+.image-lightbox { position: fixed; inset: 0; background: rgba(0,0,0,.92); display: none; align-items: center; justify-content: center; z-index: 9999; padding: 24px; }
+.image-lightbox.active { display: flex; }
+.image-lightbox img { max-width: 96vw; max-height: 88vh; object-fit: contain; box-shadow: 0 20px 60px rgba(0,0,0,.45); }
+.image-lightbox-close { position: fixed; top: 18px; right: 22px; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.35); background: rgba(255,255,255,.08); color: #fff; border-radius: 999px; font-size: 28px; line-height: 1; cursor: pointer; }
+</style>
 </head>
 
 <body>
@@ -35,7 +42,6 @@
 </header>
 
 <main>
-
 <section class="page-hero refined-page-hero project-page-hero">
   <div class="container reveal">
     <span class="eyebrow">Heritage Cottage</span>
@@ -56,16 +62,16 @@
     <button class="project-gallery-arrow left" type="button" aria-label="Previous images">&#10094;</button>
 
     <div class="project-image-track">
-      <img src="assets/images/heritage-covered-patio.jpg" alt="Heritage Cottage covered patio">
-      <img src="assets/images/heritage-guest-toilet.jpg" alt="Heritage Cottage guest toilet">
-      <img src="assets/images/heritage-kitchen.jpg" alt="Heritage Cottage kitchen">
-      <img src="assets/images/heritage-living-area.jpg" alt="Heritage Cottage living area">
-      <img src="assets/images/heritage-lounge.jpg" alt="Heritage Cottage lounge">
-      <img src="assets/images/heritage-outdoor-shower.jpg" alt="Heritage Cottage outdoor shower">
-      <img src="assets/images/heritage-primary-bathroom.jpg" alt="Heritage Cottage primary bathroom">
-      <img src="assets/images/heritage-primary-bedroom.jpg" alt="Heritage Cottage primary bedroom">
-      <img src="assets/images/heritage-secondary-bathroom.jpg" alt="Heritage Cottage secondary bathroom">
-      <img src="assets/images/heritage-secondary-bedroom.jpg" alt="Heritage Cottage secondary bedroom">
+      <img src="assets/images/heritage-kitchen.jpg" alt="Heritage Cottage kitchen" loading="lazy">
+      <img src="assets/images/heritage-primary-bathroom.jpg" alt="Heritage Cottage primary bathroom" loading="lazy">
+      <img src="assets/images/heritage-primary-bedroom.jpg" alt="Heritage Cottage primary bedroom" loading="lazy">
+      <img src="assets/images/heritage-open-plan-living-01.jpg" alt="Heritage Cottage open-plan living" loading="lazy">
+      <img src="assets/images/heritage-open-plan-living-02.jpg" alt="Heritage Cottage open-plan lounge" loading="lazy">
+      <img src="assets/images/heritage-covered-patio.jpg" alt="Heritage Cottage covered patio" loading="lazy">
+      <img src="assets/images/heritage-outdoor-shower.jpg" alt="Heritage Cottage outdoor shower" loading="lazy">
+      <img src="assets/images/heritage-guest-toilet.jpg" alt="Heritage Cottage guest toilet" loading="lazy">
+      <img src="assets/images/heritage-secondary-bedroom.jpg" alt="Heritage Cottage secondary bedroom" loading="lazy">
+      <img src="assets/images/heritage-secondary-bathroom.jpg" alt="Heritage Cottage secondary bathroom" loading="lazy">
     </div>
 
     <button class="project-gallery-arrow right" type="button" aria-label="Next images">&#10095;</button>
@@ -79,6 +85,11 @@
     <p>© 2026 Gaegane Group. All Rights Reserved.</p>
   </div>
 </footer>
+
+<div class="image-lightbox" id="imageLightbox" aria-hidden="true">
+  <button class="image-lightbox-close" type="button" aria-label="Close image">&times;</button>
+  <img src="" alt="">
+</div>
 
 <script src="assets/js/site.js"></script>
 
@@ -95,6 +106,33 @@ document.querySelectorAll(".project-gallery-wrap").forEach(wrap => {
   right.addEventListener("click", () => {
     track.scrollBy({ left: 420, behavior: "smooth" });
   });
+});
+
+const lightbox = document.getElementById("imageLightbox");
+const lightboxImg = lightbox.querySelector("img");
+const lightboxClose = lightbox.querySelector(".image-lightbox-close");
+
+document.querySelectorAll(".project-image-track img").forEach(img => {
+  img.addEventListener("click", () => {
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightbox.classList.add("active");
+    lightbox.setAttribute("aria-hidden", "false");
+  });
+});
+
+function closeLightbox() {
+  lightbox.classList.remove("active");
+  lightbox.setAttribute("aria-hidden", "true");
+  lightboxImg.src = "";
+}
+
+lightboxClose.addEventListener("click", closeLightbox);
+lightbox.addEventListener("click", e => {
+  if (e.target === lightbox) closeLightbox();
+});
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") closeLightbox();
 });
 </script>
 
