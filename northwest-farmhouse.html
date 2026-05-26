@@ -10,6 +10,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="assets/css/site.css">
+<style>
+.project-image-track img { cursor: zoom-in; }
+.image-lightbox { position: fixed; inset: 0; background: rgba(0,0,0,.92); display: none; align-items: center; justify-content: center; z-index: 9999; padding: 24px; }
+.image-lightbox.active { display: flex; }
+.image-lightbox img { max-width: 96vw; max-height: 88vh; object-fit: contain; box-shadow: 0 20px 60px rgba(0,0,0,.45); }
+.image-lightbox-close { position: fixed; top: 18px; right: 22px; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.35); background: rgba(255,255,255,.08); color: #fff; border-radius: 999px; font-size: 28px; line-height: 1; cursor: pointer; }
+</style>
 </head>
 
 <body>
@@ -35,7 +42,6 @@
 </header>
 
 <main>
-
 <section class="page-hero refined-page-hero project-page-hero">
   <div class="container reveal">
     <span class="eyebrow">Northwest Farmhouse</span>
@@ -60,15 +66,24 @@
     <button class="project-gallery-arrow left" type="button" aria-label="Previous images">&#10094;</button>
 
     <div class="project-image-track">
-      <img src="assets/images/farmhouse-braai-area.jpg" alt="Farmhouse braai area">
-      <img src="assets/images/farmhouse-chefs-kitchen.jpg" alt="Farmhouse chef kitchen">
-      <img src="assets/images/farmhouse-dining-lounge.jpg" alt="Farmhouse dining and lounge">
-      <img src="assets/images/farmhouse-entertainment-area.jpg" alt="Farmhouse entertainment area">
-      <img src="assets/images/farmhouse-kitchen.jpg" alt="Farmhouse kitchen">
-      <img src="assets/images/farmhouse-linen-storage.jpg" alt="Farmhouse linen storage">
-      <img src="assets/images/farmhouse-lounge.jpg" alt="Farmhouse lounge">
-      <img src="assets/images/farmhouse-main-bathroom.jpg" alt="Farmhouse main bathroom">
-      <img src="assets/images/farmhouse-open-plan-living.jpg" alt="Farmhouse open plan living">
+      <img src="assets/images/farmhouse-open-plan-living-01.png" alt="Farmhouse open-plan living and dining" loading="lazy">
+      <img src="assets/images/farmhouse-kitchen-blue-01.png" alt="Farmhouse blue kitchen view" loading="lazy">
+      <img src="assets/images/farmhouse-open-plan-living-02.png" alt="Farmhouse open-plan living and dining alternate view" loading="lazy">
+      <img src="assets/images/farmhouse-kitchen-blue-02.png" alt="Farmhouse blue kitchen alternate view" loading="lazy">
+      <img src="assets/images/farmhouse-open-plan-living-03.png" alt="Farmhouse open-plan living feature ceiling" loading="lazy">
+      <img src="assets/images/farmhouse-kitchen-blue-03.png" alt="Farmhouse kitchen with pendant lighting" loading="lazy">
+      <img src="assets/images/farmhouse-lounge-fireplace-01.png" alt="Farmhouse lounge with fireplace" loading="lazy">
+      <img src="assets/images/farmhouse-dining-brick-01.png" alt="Farmhouse dining room with brick feature wall" loading="lazy">
+      <img src="assets/images/farmhouse-kitchen-blue-04.png" alt="Farmhouse kitchen long view" loading="lazy">
+      <img src="assets/images/farmhouse-dining-brick-02.png" alt="Farmhouse dining room alternate view" loading="lazy">
+      <img src="assets/images/farmhouse-dining-brick-03.png" alt="Farmhouse dining room portrait view" loading="lazy">
+      <img src="assets/images/farmhouse-kitchen-blue-05.png" alt="Farmhouse kitchen artwork wall view" loading="lazy">
+      <img src="assets/images/farmhouse-main-bathroom-01.png" alt="Farmhouse main bathroom" loading="lazy">
+      <img src="assets/images/farmhouse-open-plan-living-04.png" alt="Farmhouse open-plan kitchen and dining" loading="lazy">
+      <img src="assets/images/farmhouse-kitchen-blue-06.png" alt="Farmhouse kitchen interior detail" loading="lazy">
+      <img src="assets/images/farmhouse-lounge-fireplace-02.png" alt="Farmhouse lounge fireplace alternate view" loading="lazy">
+      <img src="assets/images/farmhouse-open-plan-living-05.png" alt="Farmhouse open-plan living alternate angle" loading="lazy">
+      <img src="assets/images/farmhouse-main-bathroom-02.png" alt="Farmhouse bathroom vanity and bath" loading="lazy">
     </div>
 
     <button class="project-gallery-arrow right" type="button" aria-label="Next images">&#10095;</button>
@@ -82,6 +97,11 @@
     <p>© 2026 Gaegane Group. All Rights Reserved.</p>
   </div>
 </footer>
+
+<div class="image-lightbox" id="imageLightbox" aria-hidden="true">
+  <button class="image-lightbox-close" type="button" aria-label="Close image">&times;</button>
+  <img src="" alt="">
+</div>
 
 <script src="assets/js/site.js"></script>
 
@@ -98,6 +118,33 @@ document.querySelectorAll(".project-gallery-wrap").forEach(wrap => {
   right.addEventListener("click", () => {
     track.scrollBy({ left: 420, behavior: "smooth" });
   });
+});
+
+const lightbox = document.getElementById("imageLightbox");
+const lightboxImg = lightbox.querySelector("img");
+const lightboxClose = lightbox.querySelector(".image-lightbox-close");
+
+document.querySelectorAll(".project-image-track img").forEach(img => {
+  img.addEventListener("click", () => {
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightbox.classList.add("active");
+    lightbox.setAttribute("aria-hidden", "false");
+  });
+});
+
+function closeLightbox() {
+  lightbox.classList.remove("active");
+  lightbox.setAttribute("aria-hidden", "true");
+  lightboxImg.src = "";
+}
+
+lightboxClose.addEventListener("click", closeLightbox);
+lightbox.addEventListener("click", e => {
+  if (e.target === lightbox) closeLightbox();
+});
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") closeLightbox();
 });
 </script>
 
