@@ -453,21 +453,20 @@ p{
   width:100%;
   margin-bottom:36px;
   overflow:hidden;
-  box-shadow:var(--soft);
 }
 
 .about-inline-image img{
   width:100%;
   height:auto;
-  max-height:520px;
-  object-fit:contain;
   display:block;
 }
 
 .about-story-title{
   color:var(--black);
-  font-size:1.3rem;
-  font-weight:300;
+  font-size:1.6rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.02em;
   margin:0 0 22px;
 }
 
@@ -475,6 +474,17 @@ p{
   margin-top:36px;
   padding-top:28px;
   border-top:1px solid var(--line);
+}
+
+.about-subsection .eyebrow{
+  font-size:1rem;
+  font-weight:800;
+  letter-spacing:.2em;
+}
+
+.about-subsection .lead{
+  font-weight:800;
+  color:var(--black);
 }
 
 .values{
