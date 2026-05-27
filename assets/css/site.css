@@ -1188,18 +1188,6 @@ p{
   height:220px;
 }
 
-  .project-page-hero h1{
-    font-size:clamp(2rem,9vw,3rem) !important;
-  }
-
-  .project-image-track{
-    grid-auto-columns:82%;
-  }
-
-  .project-gallery-arrow{
-    display:none;
-  }
-
   .project-page-hero .eyebrow{
   font-size:.85rem;
 }
