@@ -96,7 +96,7 @@ img{
 .nav-links a:hover,
 .nav-links a.active{
   background:transparent;
-  color:var(--black);
+  color:var(--maroon);
   font-weight:700;
   transform:none;
 }
@@ -438,7 +438,8 @@ p{
 }
 
 .about-content-wrap{
-  max-width:1180px;
+    max-width:900px;
+    margin:0 auto;
 }
 
 .about-inline-image{
