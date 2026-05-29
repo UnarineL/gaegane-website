@@ -455,6 +455,14 @@ p{
   object-fit:cover;
 }
 
+.about-team-section{
+  padding:32px 0 0;
+}
+
+.about-image-wrap{
+  max-width:1180px;
+  margin:0 auto;
+}
 .about-story-title{
   color:var(--black);
   font-size:1.45rem;
