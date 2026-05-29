@@ -882,6 +882,16 @@ p{
   align-items:start;
 }
 
+.contact-refined .btn-primary{
+  color:var(--maroon);
+  border-color:var(--maroon);
+}
+
+.contact-refined .btn-primary:hover{
+  background:var(--maroon);
+  color:#fff;
+}
+
 .form{
   display:grid;
   gap:14px;
