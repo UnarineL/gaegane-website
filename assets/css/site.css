@@ -888,8 +888,10 @@ p{
 }
 
 .contact-refined .btn-primary:hover{
-   background:transparent;
-  color:#fff;
+  background:transparent;
+  color:var(--maroon);
+  border-color:var(--maroon);
+  transform:none;
 }
 
 .form{
