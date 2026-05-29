@@ -885,13 +885,20 @@ p{
 .contact-refined .btn-primary{
   color:var(--maroon);
   border-color:var(--maroon);
+  box-shadow:0 4px 8px rgba(0,0,0,.08);
 }
 
 .contact-refined .btn-primary:hover{
-  background:transparent !important;
-  color:var(--maroon) !important;
-  border-color:var(--maroon) !important;
-  transform:none !important;
+  background:transparent;
+  color:var(--maroon);
+  border-color:var(--maroon);
+  transform:translateY(1px);
+  box-shadow:0 2px 4px rgba(0,0,0,.06);
+}
+
+.contact-refined .btn-primary:active{
+  transform:translateY(3px);
+  box-shadow:none;
 }
 
 .form{
