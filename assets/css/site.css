@@ -888,7 +888,7 @@ p{
 }
 
 .contact-refined .btn-primary:hover{
-  background:var(--maroon);
+   background:transparent;
   color:#fff;
 }
 
